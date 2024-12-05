@@ -12,7 +12,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    Axios.post("http://localhost:5000/api/auth/signup", {
+    Axios.post("https://e-web-main-backend.onrender.com/api/auth/signup", {
       username,
       email,
       password,
