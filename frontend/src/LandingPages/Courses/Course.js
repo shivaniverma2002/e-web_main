@@ -20,7 +20,7 @@ const Course = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/courses");
+        const response = await axios.get("https://e-web-main-backend.onrender.com/api/courses");
         setCourses(response.data);
       } catch (err) {
         setError("Error fetching courses. Please try again later.");
