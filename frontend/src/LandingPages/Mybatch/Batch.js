@@ -40,7 +40,7 @@ const MyBatch = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:5000/api/my-batch/${userId}`,
+          `https://e-web-main-backend.onrender.com/api/my-batch/${userId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
