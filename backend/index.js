@@ -14,7 +14,9 @@ const app = express();
 // Middleware
 app.use(express.json()); // Built-in middleware to parse JSON requests
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: https://e-web-main-backend.onrender.com || 'http://localhost:3000',
+  methods : ["POST","GET","DELETE","PUT","PATCH"],
+  credentials:true,
 }));
 
 // Global error handling middleware
