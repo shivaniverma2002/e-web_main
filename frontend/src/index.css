@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Add to your CSS file */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: hidden;
+  animation: scroll 10s linear infinite;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6b46c1;
+  /* Purple color */
+}
+
+.swiper-pagination-bullet {
+  background: #e9d8fd;
+  /* Light purple dots */
+}
+
+.swiper-pagination-bullet-active {
+  background: #6b46c1;
+  /* Active purple dot */
+}
