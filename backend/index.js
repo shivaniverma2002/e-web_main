@@ -13,10 +13,25 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Built-in middleware to parse JSON requests
+
+const allowedOrigins = [
+  'https://e-web-main-backend.onrender.com',
+  'https://e-web-main.vercel.app',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-  origin: 'https://e-web-main-backend.onrender.com' || 'http://localhost:3000',
-  methods : ["POST","GET","DELETE","PUT","PATCH"],
-  credentials:true,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      // Allow requests from allowed origins or non-browser clients
+      callback(null, true);
+    } else {
+      // Block requests from disallowed origins
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
+  credentials: true
 }));
 
 // Global error handling middleware
