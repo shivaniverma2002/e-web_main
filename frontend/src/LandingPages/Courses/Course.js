@@ -67,7 +67,7 @@ const Course = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/enroll",
+        "https://e-web-main-backend.onrender.com/api/enroll",
         { userId: effectiveUserId, courseId },
         { headers: { "Content-Type": "application/json" } }
       );
